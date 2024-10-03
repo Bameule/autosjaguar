@@ -1,0 +1,810 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #1a1a1a; /* Color de fondo oscuro */
+    color: #e0e0e0; /* Color del texto en contraste */
+}
+
+/* Estilos para el header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.menu-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu-icon img {
+    width: 25px;
+    margin-left: 10px;
+}
+
+.menu-desplegable {
+    display: block; 
+    background-color: #333;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-desplegable ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-desplegable li {
+    display: inline-block;
+    border-bottom: 1px solid #444;
+}
+
+.menu-desplegable a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #444;
+}
+
+.menu-desplegable a:hover .dropdown-content, .menu-desplegable:hover .dropdown-content{
+    display: block;}
+
+
+.menu-desplegable a:hover {
+    background-color: #555;
+}
+
+.menu-items {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-items a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-items a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para la sección de imagen principal */
+.imagen-principal {
+    background: url('../images/imagen-principal.jpg') no-repeat center center/cover;
+    height: 400px;
+    position: relative;
+}
+
+.contenido-imagen {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    z-index: 1; /* Asegura que el texto esté sobre la imagen */
+}
+
+/* Contenedor principal de los modelos de autos */
+.modelos-autos {
+    display: flex;
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+    padding: 20px;
+    gap: 20px;
+    white-space: nowrap; /* Asegura que los contenedores se alineen en una sola línea */
+}
+
+.cuadro {
+    flex: 0 0 auto; /* Evita que los elementos se reduzcan de tamaño */
+    width: 300px; /* Ajusta el ancho del contenedor del modelo */
+    background: #fff; /* Fondo blanco para los contenedores */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para los contenedores */
+    text-align: center; /* Alinea el texto al centro */
+    padding: 10px; /* Espaciado interno */
+    box-sizing: border-box; /* Incluye el padding en el ancho total del contenedor */
+}
+
+/* Ajustes de imagen en los contenedores */
+.cuadro img {
+    width: 100%; /* Hace que la imagen ocupe el ancho completo del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 10px; /* Bordes redondeados en la imagen */
+}
+
+/* Ajustes del título */
+.cuadro h2 {
+    font-size: 1.2em; /* Ajusta el tamaño de la fuente del título */
+    margin: 10px 0; /* Espacio arriba y abajo del título */
+    color: #333; /* Color del título */
+}
+
+/* Ajustes del párrafo */
+.cuadro p {
+    font-size: 0.9em; /* Ajusta el tamaño de la fuente del párrafo */
+    margin-bottom: 10px; /* Espacio abajo del párrafo */
+    text-align: center; /* Centra el texto horizontalmente */
+    text-align: justify; /* Justifica el texto para que ocupe todo el ancho del contenedor */
+    text-justify: inter-word; /* Ajusta la justificación para que no queden espacios irregulares */
+}
+
+/* Ajustes del botón */
+.btn-descubrir {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    text-decoration: none;
+    border-radius: 5px; /* Bordes redondeados en el botón */
+}
+
+.btn-descubrir:hover {
+    background-color: #555; /* Color de fondo del botón cuando está en hover */
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+/* Menú desplegable en móviles */
+@media (max-width: 768px) {
+    .menu-items {
+        display: none;
+    }
+    
+    .menu-desplegable {
+        display: none
+    }
+    
+    .modelos-autos {
+        margin-top: 480px; /* Ajusta el margen superior para evitar superposición con la imagen principal en dispositivos móviles */
+    }
+}
+
+/* Estilos para la sección de detalle del modelo */
+.modelo-detalle,
+.diseno,
+.exterior {
+    padding: 20px;
+}
+
+.detalle-image,
+.diseno-image,
+.exterior-image {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+
+.detalle-text,
+.diseno-text,
+.exterior-text {
+    padding: 20px;
+}
+
+/* Ajustes para las imágenes de fondo en las secciones */
+.detalle-image,
+.diseno-image,
+.exterior-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 400px; /* Ajusta la altura según sea necesario */
+}
+
+/* Imágenes de fondo para secciones específicas */
+.detalle-image {
+    background-image: url('../images/auto2.jpg');
+}
+
+.diseno-image {
+    background-image: url('../images/auto3.jpg');
+}
+
+.exterior-image {
+    background-image: url('../images/auto4.jpg');
+}
+
+/* Estilos para el texto sobre la imagen en secciones */
+.detalle-text,
+.diseno-text,
+.exterior-text {
+    color: white; /* Color del texto */
+    text-align: left; /* Alineación del texto */
+    position: absolute; /* Posiciona el texto sobre la imagen */
+    top: 20px; /* Ajusta según sea necesario */
+    left: 20px; /* Espacio desde el borde izquierdo */
+    padding: 20px; /* Espacio alrededor del texto */
+    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejorar la legibilidad */
+    max-width: 90%; /* Evita que el texto se extienda demasiado */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+/* Medidas para dispositivos móviles */
+@media (max-width: 768px) {
+    .hero {
+        height: 300px; /* Ajusta la altura según sea necesario */
+    }
+    
+    .detalle-image,
+    .diseno-image,
+    .exterior-image {
+        height: 250px; /* Ajusta la altura según sea necesario */
+    }
+
+    .hero-text,
+    .detalle-text,
+    .diseno-text,
+    .exterior-text {
+        font-size: 14px; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+        padding: 10px; /* Reduce el padding en pantallas pequeñas */
+        left: 10px; /* Ajusta la posición del texto */
+        top: 10px; /* Ajusta la posición del texto */
+    }
+}
+
+.buscar-distribuidor {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #eee;
+}
+
+.mapa-logo {
+    margin-right: 20px;
+}
+
+.buscar-distribuidor img {
+    width: 100px;
+}
+
+.texto-buscar {
+    flex: 1;
+}
+
+.jaguar-tcs-racing {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.jaguar-tcs-racing .contenido-centrado {
+    display: flex;
+    align-items: center;
+}
+
+.jaguar-tcs-racing img {
+    width: 50%;
+}
+
+.texto-racing {
+    margin-left: 20px;
+}
+
+.Imagen final img{
+    margin-top: 20px;
+    background: url('../images/autos-enfrentados.jpg') no-repeat center center/cover;
+    height: 300px;
+    width: 100%;
+}
+
+/* Estilos para la sección de detalle del modelo */
+.modelo-detalle,
+.diseno,
+.exterior {
+    padding: 20px;
+}
+
+.detalle-image,
+.diseno-image,
+.exterior-image {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+
+.detalle-text,
+.diseno-text,
+.exterior-text {
+    padding: 20px;
+}
+
+.footer {
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.redes-sociales img {
+    width: 40px;
+}
+
+/* Menú desplegable en móviles */
+@media (max-width: 768px) {
+    .menu-items {
+        display: none;
+    }
+    
+}
+/* Estilos generales para las secciones */
+section {
+    position: relative;
+    width: 100%;
+    height: auto; /* Ajuste la altura según el contenido */
+    min-height: 500px; /* Altura mínima para mantener la estructura */
+}
+
+/* Estilos para la imagen de fondo */
+.hero-image, .detalle-image, .diseno-image, .exterior-image {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat; /* Evita la repetición de la imagen */
+}
+
+/* Estilos para la sección hero */
+.hero {
+    height: 500px; /* Ajusta la altura según sea necesario */
+    position: relative;
+}
+
+.hero-image {
+    background-image: url('../images/jaguari-pacevisto de atras.jpg');
+}
+
+/* Estilos para el texto sobre la imagen en la sección hero */
+.hero-text {
+    color: white; /* Color del texto */
+    text-align: left; /* Alineación del texto */
+    position: absolute; /* Posiciona el texto sobre la imagen */
+    top: 50%; /* Centra verticalmente */
+    left: 20px; /* Espacio desde el borde izquierdo */
+    transform: translateY(-50%); /* Ajusta para centrar verticalmente */
+    padding: 20px; /* Espacio alrededor del texto */
+    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejorar la legibilidad */
+    max-width: 90%; /* Evita que el texto se extienda demasiado */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+/* Estilos para las secciones de detalle */
+.modelo-detalle, .diseno, .exterior {
+    padding: 20px;
+    position: relative;
+}
+
+/* Ajustes para las imágenes de fondo en las secciones */
+.detalle-image, .diseno-image, .exterior-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 400px; /* Ajusta la altura según sea necesario */
+}
+
+/* Imágenes de fondo para secciones específicas */
+.detalle-image {
+    background-image: url('../images/auto2.jpg');
+}
+
+.diseno-image {
+    background-image: url('../images/auto3.jpg');
+}
+
+.exterior-image {
+    background-image: url('../images/auto4.jpg');
+}
+
+/* Estilos para el texto sobre la imagen en secciones */
+.detalle-text, .diseno-text, .exterior-text {
+    color: white; /* Color del texto */
+    text-align: left; /* Alineación del texto */
+    position: absolute; /* Posiciona el texto sobre la imagen */
+    top: 20px; /* Ajusta según sea necesario */
+    left: 20px; /* Espacio desde el borde izquierdo */
+    padding: 20px; /* Espacio alrededor del texto */
+    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejorar la legibilidad */
+    max-width: 90%; /* Evita que el texto se extienda demasiado */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+/* Medidas para dispositivos móviles */
+@media (max-width: 768px) {
+    .hero {
+        height: 300px; /* Ajusta la altura según sea necesario */
+    }
+    
+    .detalle-image, .diseno-image, .exterior-image {
+        height: 250px; /* Ajusta la altura según sea necesario */
+    }
+
+    .hero-text, .detalle-text, .diseno-text, .exterior-text {
+        font-size: 14px; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+        padding: 10px; /* Reduce el padding en pantallas pequeñas */
+        left: 10px; /* Ajusta la posición del texto */
+        top: 10px; /* Ajusta la posición del texto */
+    }
+}
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Estilos para el header */
+header {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.menu-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu-icon img {
+    width: 25px;
+    margin-left: 10px;
+}
+
+/* Estilos para la sección de imagen principal */
+.imagen-principal {
+    background: url('../images/imagen-principal.jpg') no-repeat center center/cover;
+    height: 400px;
+    position: relative;
+}
+
+.contenido-imagen {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+}
+
+.texto {
+    margin-top: 20px;
+}
+
+/* Estilos para los bloques de noticias */
+.modelos-autos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 420px; /* Ajusta el margen superior para evitar superposición con la imagen principal */
+}
+
+.cuadro {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 8px;
+    width: calc(33.333% - 20px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.cuadro img {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+.cuadro h2 {
+    margin-top: 10px;
+}
+
+.btn-descubrir {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-descubrir:hover {
+    background-color: #555;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+/* Menú desplegable en móviles */
+@media (max-width: 768px) {
+    .menu-items {
+        display: none;
+    }
+    
+    .modelos-autos {
+        margin-top: 480px; /* Ajusta el margen superior para evitar superposición con la imagen principal en dispositivos móviles */
+    }
+}
+/* Estilos para la sección de imagen principal */
+.imagen-noticiaprincipal {
+    background: url('../images/jaguarnoticiaprincipal.jpg') no-repeat center center/cover;
+    height: 400px; /* Ajusta la altura según sea necesario */
+    position: relative;
+}
+
+.contenido-imagen {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    z-index: 1; /* Asegura que el texto esté sobre la imagen */
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #1a1a1a; /* Color de fondo oscuro */
+    color: #6b6b6b; /* Color del texto en contraste */
+}
+header {
+    background-color: #333; /* Color de fondo del header */
+    color: white;
+}
+
+.imagen-noticiaprincipal {
+    background: url('../images/jaguarnoticiaprincipal.jpg') no-repeat center center;
+    background-size: cover; /* Asegura que la imagen cubra toda la sección */
+    height: 400px; /* Ajusta la altura según sea necesario */
+    position: relative;
+}
+
+.contenido-imagen {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    z-index: 1; /* Asegura que el texto esté sobre la imagen */
+}
+
+.modelos-autos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 420px; /* Ajusta el margen superior para evitar superposición con la imagen principal */
+}
+
+.cuadro {
+    background-color: #2a2a2a; /* Fondo oscuro para los bloques de noticias */
+    padding: 10px;
+    border-radius: 8px;
+    width: calc(33.333% - 20px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.cuadro img {
+    width: 100%;
+    border-bottom: 1px solid #444;
+}
+
+.cuadro h2 {
+    margin-top: 10px;
+    color: #e0e0e0; /* Color del texto en los bloques de noticias */
+}
+
+.btn-descubrir {
+    display: inline-block;
+    background-color: #444; /* Fondo del botón */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-descubrir:hover {
+    background-color: #666; /* Fondo del botón en hover */
+}
+
+.footer {
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+/* Imagen Principal */
+.imagen-principal {
+    background: url('../images/imagen-principal.jpg') no-repeat center center/cover;
+    height: 400px; /* Ajusta la altura según sea necesario */
+    position: relative;
+}
+
+.contenido-imagen {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    z-index: 1;
+}
+
+/* Mapa y Bloques de Información */
+.mapa-concesionarios {
+    position: relative;
+}
+
+.mapa-fondo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.info-concesionarios {
+    position: absolute;
+    top: 50px; /* Ajusta la distancia desde el borde superior según sea necesario */
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.concesionario {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 20px);
+}
+
+.concesionario h2 {
+    margin-top: 0;
+}
+
+.footer {
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+.modelos-autos-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.cuadro {
+    min-width: 300px; /* Ajusta el tamaño de cada elemento del slider */
+    margin: 0 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.cuadro img {
+    width: 100%;
+    height: auto;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+.logo img {
+    height: 50px; /* Ajusta el tamaño del logo */
+}
+.menu-icon{display: none}
+@media(max-width:480px){.menu-icon{display: block;}
+.responsive{display: block;}
+
+}
+
+/* Estilos generales para los bloques de concesionarios */
+.info-concesionarios {
+    display: flex;
+    justify-content: space-between;
+}
+
+.concesionario {
+    width: 48%;
+    padding: 20px;
+    background-color: #f5f5f5;
+    margin-bottom: 20px;
+}
+
+/* Media Query para pantallas pequeñas (celulares) */
+@media (max-width: 768px) {
+    .info-concesionarios {
+        display: block; /* Los elementos ahora se apilan uno debajo del otro */
+    }
+
+    .concesionario {
+        width: 100%; /* Los bloques ocuparán todo el ancho disponible */
+        margin-bottom: 20px; /* Separación entre bloques */
+    }
+}
+
+.imagen-distribuidorprincipal {
+    background: url('../images/Jag_F-TYPE_24MY_Exterior_Detail_02_March_2023_MF101966.jpg') no-repeat center center/cover;
+    height: 400px; /* Ajusta la altura según sea necesario */
+    position: relative;
+}
