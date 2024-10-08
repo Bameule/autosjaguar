@@ -107,6 +107,13 @@ header {
     z-index: 1; /* Asegura que el texto esté sobre la imagen */
 }
 
+.logo-imagen {
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina el espacio extra debajo de la imagen en algunos navegadores */
+    margin: 0 auto; /* Centra la imagen si es necesario */
+}
+
 /* Contenedor principal de los modelos de autos */
 .modelos-autos {
     display: flex;
@@ -512,9 +519,12 @@ header {
     background-color: #f4f4f4;
     padding: 10px;
     border-radius: 8px;
-    width: calc(33.333% - 20px);
+    width: calc(33.333% - 20px); /* Ajusta el ancho de la caja */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* Para que los elementos se apilen verticalmente */
+    overflow: hidden; /* Evita que el contenido desborde */
 }
 
 .cuadro img {
@@ -522,8 +532,12 @@ header {
     border-bottom: 1px solid #ddd;
 }
 
-.cuadro h2 {
-    margin-top: 10px;
+.cuadro p {
+    margin: 10px 0;
+    word-wrap: break-word; /* Permite que las palabras largas se ajusten dentro de la caja */
+    overflow-wrap: break-word; /* Asegura que el texto largo se ajuste al ancho disponible */
+    white-space: normal; /* Permite que el texto se divida en múltiples líneas */
+    flex-grow: 1; /* Hace que el texto ocupe el espacio disponible */
 }
 
 .btn-descubrir {
@@ -533,6 +547,7 @@ header {
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
+    align-self: flex-start; /* Asegura que el botón no se expanda en toda la caja */
 }
 
 .btn-descubrir:hover {
@@ -661,6 +676,7 @@ header {
 /* Mapa y Bloques de Información */
 .mapa-concesionarios {
     position: relative;
+    padding-bottom: 300px; /* Asegura que haya suficiente espacio para el formulario */
 }
 
 .mapa-fondo img {
@@ -669,6 +685,7 @@ header {
     display: block;
 }
 
+/* Ajuste para los bloques de concesionarios */
 .info-concesionarios {
     position: absolute;
     top: 50px; /* Ajusta la distancia desde el borde superior según sea necesario */
@@ -691,6 +708,54 @@ header {
     margin-top: 0;
 }
 
+/* Estilos para el formulario sobre el mapa */
+.formulario-solicitud {
+    position: absolute;
+    top: 400px; /* Ajusta según la ubicación exacta del formulario */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.formulario-jaguar div {
+    margin-bottom: 15px;
+}
+
+.formulario-jaguar label {
+    display: block;
+    font-weight: bold;
+}
+
+.formulario-jaguar input,
+.formulario-jaguar select,
+.formulario-jaguar textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn-enviar {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-enviar:hover {
+    background-color: #555;
+}
+
+/* Footer */
 .footer {
     padding: 20px;
     background-color: #333;
@@ -789,28 +854,32 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #f1f1f1;
-    padding: 20px;
+    background-color: gray;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
+    max-width: 728px;
+    height: 90px;
     margin: 20px auto;
 }
 
 .anuncio-logo img {
-    max-width: 100px;
+    max-width: 150px;
     height: auto;
 }
 
 .anuncio-texto {
     flex: 1;
     margin: 0 20px;
+    color: white;
+    font-size: 14px;
+    text-align: center;
 }
 
 .anuncio-boton a {
     background-color: #007BFF;
     color: white;
-    padding: 10px 20px;
+    padding: 8px 16px;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
@@ -818,6 +887,32 @@ header {
 
 .anuncio-boton a:hover {
     background-color: #0056b3;
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 600px) {
+    .anuncio {
+        max-width: 300px;
+        height: 600px;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .anuncio-logo img {
+        max-width: 100px;
+        margin-bottom: 20px;
+    }
+
+    .anuncio-texto {
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+
+    .anuncio-boton a {
+        width: 100%;
+        padding: 15px;
+        text-align: center;
+    }
 }
 
 
@@ -831,8 +926,4 @@ header {
         width: 100%; /* Los bloques ocuparán todo el ancho disponible */
         margin-bottom: 20px; /* Separación entre bloques */
     }
-	.anuncioaca {
-	width: 300px;
-	height: 600px;
-}
 }
