@@ -834,12 +834,6 @@ header {
     background-color: #f5f5f5;
     margin-bottom: 20px;
 }
-.anuncioaca {
-	width: 728px;
-	height: 90px;
-	display:block;
-	margin: auto
-}
 
 .imagen-distribuidorprincipal {
     background: url('../images/Jag_F-TYPE_24MY_Exterior_Detail_02_March_2023_MF101966.jpg') no-repeat center center/cover;
@@ -848,8 +842,47 @@ header {
 }
 .box-contenedor img{
 	width:100%
-		
 }
+
+.anuncioaca {
+	width: 728px;
+	height: 90px;
+	display:block;
+	margin: auto
+}
+
+/* Tamaño fijo del anuncio en computadoras (728x90 px) */
+.anuncioaca {
+    width: 728px;
+    height: 90px;
+    margin: 0 auto; /* Centrar el anuncio */
+    display: block;
+    position: relative;
+}
+
+/* Para dispositivos móviles (300x600 px) */
+@media (max-width: 600px) {
+    .anuncioaca {
+        width: 300px;
+        height: 600px;
+    }
+}
+
+/* Imagen que sigue al anuncio */
+.box-contenedor img {
+    width: 100%;
+    display: block;
+    position: relative;
+    margin-top: 20px; /* Separar la imagen del anuncio */
+}
+
+/* Contenedor del anuncio e imagen */
+.box-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .anuncio {
     display: flex;
     align-items: center;
@@ -926,4 +959,20 @@ header {
         width: 100%; /* Los bloques ocuparán todo el ancho disponible */
         margin-bottom: 20px; /* Separación entre bloques */
     }
+
+/* Estilos para computadoras */
+.anuncioaca {
+    width: 728px;
+    height: 90px;
+    border: 0;
+}
+
+/* Estilos para dispositivos móviles (pantallas menores de 768px) */
+@media (max-width: 768px) {
+    .anuncioaca {
+        width: 300px;
+        height: 600px;
+        border: 0;
+    }
+}
 }
