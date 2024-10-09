@@ -34,6 +34,7 @@ header {
     display: flex;
     align-items: center;
     cursor: pointer;
+	color: white;
 }
 
 .menu-icon img {
@@ -179,21 +180,6 @@ header {
     text-align: center;
 }
 
-/* Menú desplegable en móviles */
-@media (max-width: 768px) {
-    .menu-items {
-        display: none;
-    }
-    
-    .menu-desplegable {
-        display: none
-    }
-    
-    .modelos-autos {
-        margin-top: 480px; /* Ajusta el margen superior para evitar superposición con la imagen principal en dispositivos móviles */
-    }
-}
-
 /* Estilos para la sección de detalle del modelo */
 .modelo-detalle,
 .diseno,
@@ -254,29 +240,6 @@ header {
     box-sizing: border-box; /* Incluye el padding en el ancho total */
 }
 
-/* Medidas para dispositivos móviles */
-@media (max-width: 768px) {
-    .hero {
-        height: 300px; /* Ajusta la altura según sea necesario */
-    }
-    
-    .detalle-image,
-    .diseno-image,
-    .exterior-image {
-        height: 250px; /* Ajusta la altura según sea necesario */
-    }
-
-    .hero-text,
-    .detalle-text,
-    .diseno-text,
-    .exterior-text {
-        font-size: 14px; /* Ajusta el tamaño de fuente para pantallas pequeñas */
-        padding: 10px; /* Reduce el padding en pantallas pequeñas */
-        left: 10px; /* Ajusta la posición del texto */
-        top: 10px; /* Ajusta la posición del texto */
-    }
-}
-
 .buscar-distribuidor {
     display: flex;
     align-items: center;
@@ -296,11 +259,11 @@ header {
     flex: 1;
 }
 
-.Imagen final img{
+.Imagen-final img {
     margin-top: 20px;
-    background: url('../images/autos-enfrentados.jpg') no-repeat center center/cover;
-    height: 300px;
-    width: 100%;
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+    width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
+    display: block; /* Asegura que no haya espacio adicional debajo */
 }
 
 /* Estilos para la sección de detalle del modelo */
@@ -340,20 +303,12 @@ header {
 .redes-sociales img {
     width: 40px;
 }
-
-/* Menú desplegable en móviles */
-@media (max-width: 768px) {
-    .menu-items {
-        display: none;
-    }
     
-}
 /* Estilos generales para las secciones */
 section {
     position: relative;
     width: 100%;
     height: auto; /* Ajuste la altura según el contenido */
-    min-height: 500px; /* Altura mínima para mantener la estructura */
 }
 
 /* Estilos para la imagen de fondo */
@@ -430,23 +385,6 @@ section {
     box-sizing: border-box; /* Incluye el padding en el ancho total */
 }
 
-/* Medidas para dispositivos móviles */
-@media (max-width: 768px) {
-    .hero {
-        height: 300px; /* Ajusta la altura según sea necesario */
-    }
-    
-    .detalle-image, .diseno-image, .exterior-image {
-        height: 250px; /* Ajusta la altura según sea necesario */
-    }
-
-    .hero-text, .detalle-text, .diseno-text, .exterior-text {
-        font-size: 14px; /* Ajusta el tamaño de fuente para pantallas pequeñas */
-        padding: 10px; /* Reduce el padding en pantallas pequeñas */
-        left: 10px; /* Ajusta la posición del texto */
-        top: 10px; /* Ajusta la posición del texto */
-    }
-}
 /* Reset básico */
 * {
     margin: 0;
@@ -562,16 +500,6 @@ header {
     text-align: center;
 }
 
-/* Menú desplegable en móviles */
-@media (max-width: 768px) {
-    .menu-items {
-        display: none;
-    }
-    
-    .modelos-autos {
-        margin-top: 480px; /* Ajusta el margen superior para evitar superposición con la imagen principal en dispositivos móviles */
-    }
-}
 /* Estilos para la sección de imagen principal */
 .imagen-noticiaprincipal {
     background: url('../images/jaguarnoticiaprincipal.jpg') no-repeat center center/cover;
@@ -772,8 +700,7 @@ header {
 .slider-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    justify-content: flex-start; /* Alinea los modelos a la izquierda */
 }
 
 .slider-wrapper {
@@ -782,21 +709,23 @@ header {
 }
 
 .cuadro {
-    min-width: 300px; /* Ajusta el tamaño de cada elemento del slider */
+    min-width: 300px; /* Tamaño por defecto en pantallas grandes */
     box-sizing: border-box;
     text-align: center;
+    padding: 10px; /* Espaciado interno para los cuadros */
 }
 
 .cuadro img {
     width: 100%;
     height: auto;
+    border-radius: 10px; /* Bordes redondeados opcional */
 }
 
 .prev, .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
     color: #fff;
     border: none;
     padding: 10px;
@@ -812,15 +741,10 @@ header {
     right: 10px;
 }
 
-
 .logo img {
     height: 50px; /* Ajusta el tamaño del logo */
 }
 .menu-icon{display: none}
-@media(max-width:480px){.menu-icon{display: block;}
-.responsive{display: block;}
-
-}
 
 /* Estilos generales para los bloques de concesionarios */
 .info-concesionarios {
@@ -858,14 +782,6 @@ header {
     margin: 0 auto; /* Centrar el anuncio */
     display: block;
     position: relative;
-}
-
-/* Para dispositivos móviles (300x600 px) */
-@media (max-width: 600px) {
-    .anuncioaca {
-        width: 300px;
-        height: 600px;
-    }
 }
 
 /* Imagen que sigue al anuncio */
@@ -922,7 +838,213 @@ header {
     background-color: #0056b3;
 }
 
-/* Media Queries para dispositivos móviles */
+/* Estilos para computadoras */
+.anuncioaca {
+    width: 728px;
+    height: 90px;
+    border: 0;
+}
+
+/* Contenedor general para los elementos alineados */
+.contenedor {
+    display: flex; /* Habilita flexbox */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en múltiples líneas si es necesario */
+    justify-content: space-between; /* Espacia los elementos igualmente */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    margin: 20px; /* Espaciado general, ajusta según sea necesario */
+}
+
+/* Contenedor general para los elementos alineados */
+.contenedor {
+    display: flex; /* Habilita flexbox */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en múltiples líneas si es necesario */
+    justify-content: space-between; /* Espacia los elementos igualmente */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    margin: 20px; /* Espaciado general, ajusta según sea necesario */
+}
+
+/* Contenedor general para los elementos alineados */
+.contenedor {
+    display: flex; /* Habilita flexbox */
+    justify-content: space-between; /* Espacia los elementos igualmente */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    margin: 20px; /* Espaciado general, ajusta según sea necesario */
+}
+/* Estilos generales para los bloques de noticias */
+.modelos-autos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center; /* Centra los bloques en pantallas grandes */
+}
+
+.cuadro {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 8px;
+    width: calc(33.333% - 20px); /* Ajusta el ancho de la caja */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-align: center; /* Centra el texto en cada noticia */
+}
+
+.cuadro img {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+.cuadro p {
+    margin: 10px 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    flex-grow: 1;
+}
+
+.btn-descubrir {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-descubrir:hover {
+    background-color: #555;
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .modelos-autos {
+        flex-direction: column; /* Apila las noticias en una columna */
+        padding: 0;
+    }
+    
+    .cuadro {
+        width: 100%; /* Cada noticia ocupa el 100% del ancho */
+        margin: 0 0 20px 0; /* Espaciado entre las noticias */
+    }
+
+    .btn-descubrir {
+        width: 100%; /* El botón se adapta al ancho de la caja */
+        text-align: center;
+    }
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .modelos-autos {
+        flex-direction: column; /* Apila las noticias en una columna */
+        padding: 0;
+    }
+    
+    .cuadro {
+        width: 100%; /* Cada noticia ocupa el 100% del ancho */
+        margin: 0 0 20px 0; /* Espaciado entre las noticias */
+    }
+
+    .btn-descubrir {
+        width: 100%; /* El botón se adapta al ancho de la caja */
+        text-align: center;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px; /* Añadir algo de padding */
+        background-color: #333; /* Fondo de la barra de navegación */
+    }
+
+    .menu-items {
+        display: none; /* Mantiene ocultos los elementos del menú por defecto */
+    }
+    
+    .menu-desplegable {
+        display: none; /* Oculta el menú inicialmente */
+        background-color: #333; /* Color de fondo del menú desplegable */
+        position: absolute; /* Asegúrate de que se posicione correctamente */
+        width: 200px; /* Ancho fijo para el menú desplegable */
+        right: 0; /* Alineado a la derecha */
+        z-index: 1000; /* Para asegurarte de que esté encima de otros elementos */
+        top: 60px; /* Ajusta la posición vertical si es necesario */
+    }
+
+    /* Mostrar el menú al hacer clic */
+    .menu-desplegable.active {
+        display: block; /* Muestra el menú cuando está activo */
+    }
+
+    /* Estilo para los enlaces de navegación en móviles */
+    nav ul {
+        display: flex; /* Utilizar flexbox */
+        justify-content: space-between; /* Espacia los elementos en línea */
+        padding: 0; /* Sin padding */
+        margin: 0; /* Sin margen */
+        list-style: none; /* Sin viñetas */
+    }
+
+    nav ul li {
+        position: relative; /* Para el menú desplegable */
+    }
+
+    nav ul li a {
+        color: #ffffff; /* Color del texto */
+        background-color: #555555; /* Cambiado a un gris oscuro */
+        padding: 10px 15px; /* Espaciado interno */
+        text-decoration: none; /* Sin subrayado */
+        display: block; /* Para que el área de clic sea toda la celda */
+        border-radius: 5px; /* Bordes redondeados opcional */
+        margin: 5px; /* Margen entre los botones */
+    }
+
+    /* Cambiar color al pasar el mouse */
+    nav ul li a:hover {
+        background-color: #333333; /* Color de fondo al pasar el ratón, un gris más oscuro */
+    }
+
+    .hero {
+        height: 300px; /* Ajusta la altura según sea necesario */
+    }
+
+    .detalle-image,
+    .diseno-image,
+    .exterior-image {
+        height: 250px; /* Ajusta la altura según sea necesario */
+    }
+
+    .hero-text,
+    .detalle-text,
+    .diseno-text,
+    .exterior-text {
+        font-size: 14px; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+        padding: 10px; /* Reduce el padding en pantallas pequeñas */
+        left: 10px; /* Ajusta la posición del texto */
+        top: 10px; /* Ajusta la posición del texto */
+    }
+
+    .info-concesionarios {
+        display: block; /* Los elementos ahora se apilan uno debajo del otro */
+    }
+
+    .menu-icon {
+        display: block; /* Muestra el icono del menú en móviles */
+    }
+
+    /* Estilos para anuncios en dispositivos móviles */
+    .anuncioaca {
+        width: 300px;
+        height: 600px; /* Ajusta las dimensiones del anuncio */
+        border: 0;
+    }
+}
+
+/* Media Query para dispositivos móviles (300x600 px) */
 @media (max-width: 600px) {
     .anuncio {
         max-width: 300px;
@@ -948,31 +1070,18 @@ header {
     }
 }
 
-
-/* Media Query para pantallas pequeñas (celulares) */
+/* Media Queries para dispositivos móviles (Slider de modelos de autos) */
 @media (max-width: 768px) {
-    .info-concesionarios {
-        display: block; /* Los elementos ahora se apilan uno debajo del otro */
+    .modelos-autos-slider {
+        width: 100%; /* Asegura que el slider ocupe todo el ancho */
     }
 
-    .concesionario {
-        width: 100%; /* Los bloques ocuparán todo el ancho disponible */
-        margin-bottom: 20px; /* Separación entre bloques */
+    .slider-wrapper {
+        width: 100%; /* Asegura que el slider ocupe todo el ancho disponible */
     }
 
-/* Estilos para computadoras */
-.anuncioaca {
-    width: 728px;
-    height: 90px;
-    border: 0;
-}
-
-/* Estilos para dispositivos móviles (pantallas menores de 768px) */
-@media (max-width: 768px) {
-    .anuncioaca {
-        width: 300px;
-        height: 600px;
-        border: 0;
+    .cuadro {
+        min-width: 100%; /* Cada cuadro ocupa el 100% del contenedor en móviles */
+        padding: 5px; /* Reduce el padding en móviles */
     }
-}
 }
