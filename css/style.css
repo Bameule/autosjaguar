@@ -766,9 +766,6 @@ header {
     height: 400px; /* Ajusta la altura según sea necesario */
     position: relative;
 }
-.box-contenedor img{
-	width:100%
-}
 
 /* Contenedor del anuncio e imagen */
 .box-contenedor {
@@ -820,16 +817,18 @@ header {
     background-color: #0056b3;
 }
 
-/* Anuncio Aca */
+/* Estilo del iframe en computadoras */
 .anuncioaca {
-    width: 728px; /* Tamaño fijo del anuncio en computadoras (728x90 px) */
-    height: 90px;
+    width: 728px; /* Ancho en computadoras */
+    height: 90px; /* Altura en computadoras */
     display: block;
-    margin: 20px auto; /* Margen vertical del anuncio */
+    margin: 20px auto; /* Centrado en computadoras */
+    border: 0; /* Sin borde */
+    transition: all 0.3s ease; /* Transición suave para cambios */
 }
 
 /* Imagen que sigue al anuncio */
-.box-contenedor img {
+.box-contenedora img {
     width: 100%;
     display: block;
     position: relative;
