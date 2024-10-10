@@ -788,7 +788,7 @@ header {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 728px;
     height: 90px;
-    margin: 20px auto; /* Centrar el anuncio y espacio */
+    margin: 0 auto; /* Centrar el anuncio sin margen vertical */
 }
 
 /* Logo del anuncio */
@@ -825,7 +825,7 @@ header {
     width: 728px; /* Tamaño fijo del anuncio en computadoras (728x90 px) */
     height: 90px;
     display: block;
-    margin: 20px auto; /* Centrar el anuncio y espacio */
+    margin: 20px auto; /* Margen vertical del anuncio */
 }
 
 /* Imagen que sigue al anuncio */
