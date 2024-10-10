@@ -622,6 +622,7 @@ header {
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten si el espacio es pequeño */
 }
 
 .concesionario {
@@ -629,7 +630,7 @@ header {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: calc(50% - 20px);
+    width: calc(50% - 20px); /* Ajusta el ancho de los concesionarios */
 }
 
 .concesionario h2 {
@@ -639,13 +640,14 @@ header {
 /* Estilos para el formulario sobre el mapa */
 .formulario-solicitud {
     position: absolute;
-    top: 400px; /* Ajusta según la ubicación exacta del formulario */
+    top: 275px; /* Ajusta según la ubicación exacta del formulario */
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
     padding: 20px;
     border-radius: 8px;
-    max-width: 600px;
+    max-width: 600px; /* Ancho fijo para pantallas grandes */
+    width: 90%; /* Cambia a 90% para más ancho en pantallas pequeñas */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1;
 }
@@ -1083,5 +1085,22 @@ header {
     .cuadro {
         min-width: 100%; /* Cada cuadro ocupa el 100% del contenedor en móviles */
         padding: 5px; /* Reduce el padding en móviles */
+    }
+}
+
+@media (max-width: 768px) {
+    .info-concesionarios {
+        flex-direction: column; /* Apila los elementos en columnas */
+        align-items: center; /* Centra los elementos */
+    }
+
+    .concesionario {
+        width: 100%; /* Concesionarios ocupan el 100% del ancho */
+        margin-bottom: 20px; /* Espacio entre concesionarios */
+    }
+
+    .formulario-solicitud {
+        width: 100%; /* El formulario ocupa el 100% del ancho */
+        margin-top: 450px; /* Espacio encima del formulario */
     }
 }
