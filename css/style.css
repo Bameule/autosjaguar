@@ -1112,6 +1112,76 @@ body.lb-disable-scrolling {
   opacity: 1;
 }
 
+.gallery-section {
+    text-align: center;
+    padding: 20px;
+    color: #333;
+}
+
+.gallery-section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #8A8686; /* Color alineado con los de Jaguar */
+}
+
+.gallery-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    width: 100px; /* Ajusta el tamaño de la miniatura */
+    height: auto;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1); /* Efecto de agrandamiento al pasar el ratón */
+}
+
+/* Estilo del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.close-button {
+    float: right;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close-button:hover {
+    color: #000;
+}
+
 /* Ajustes para pantallas más pequeñas */
 @media (max-width: 768px) {
     .modelos-autos {

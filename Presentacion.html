@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación - Sitio Jaguar</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #1C1C1E; /* Fondo oscuro elegante */
+            color: #ffffff;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide h1 {
+            font-size: 4rem;
+            margin: 10px 0;
+            color: #00743F; /* Verde Jaguar */
+        }
+
+        .slide h2 {
+            font-size: 2rem;
+            margin: 20px 0;
+            color: #C2C2C2; /* Gris claro */
+        }
+
+        .slide p, .slide ul {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            max-width: 800px;
+            color: #EDEDED;
+        }
+
+        .list {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        .list-item {
+            padding: 10px 20px;
+            background-color: #2A2A2E;
+            border-radius: 8px;
+            color: #A9A9A9; /* Gris */
+        }
+
+        .nav-buttons {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #00743F; /* Verde Jaguar */
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .button:disabled {
+            background-color: #444;
+            color: #888;
+            cursor: default;
+        }
+
+        img {
+            max-width: 1000px;
+            height: auto;
+            margin-top: 10px;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .text-left {
+            flex: 1;
+            text-align: left;
+            margin-right: 20px;
+        }
+
+        .text-right {
+            flex: 1;
+            text-align: right;
+            margin-left: 20px;
+        }
+
+        .image-right, .image-left {
+            width: 800px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .wireframe-container, .wireframe-mobile-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .wireframe-container img, .wireframe-mobile-container img {
+            width: 200px;
+            height: 800px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Diapositiva inicial -->
+    <div class="slide active" id="slide1">
+        <img src="images/logo-jaguar.png" alt="Logo de Jaguar">
+        <h2>Mateo Bameule</h2>
+        <p>Profesor: Wenceslao Ignacio Zavala</p>
+        <p>Materia: PRODUCCION DIGITAL I</p>
+    </div>
+    
+    <!-- Diapositiva de Temática -->
+    <div class="slide" id="slide2">
+        <h1>Temática</h1>
+        <div class="content">
+            <div class="text-left">
+                <p>Jaguar es una marca británica de automóviles de lujo y alto rendimiento, conocida por su estilo elegante y sofisticado, así como por su avanzada tecnología.</p>
+            </div>
+            <img src="images/jaguarnoticiaprincipal.jpg" alt="Imagen de Jaguar" class="image-right">
+        </div>
+    </div>
+
+    <!-- Diapositiva de Objetivo y Público -->
+    <div class="slide" id="slide3">
+        <h1>Objetivo y Público</h1>
+        <div class="content">
+            <img src="images/Jag_F-PACE_24MY_Exterior_08_Detail_GL_001_141222.jpg" alt="Imagen relacionada" class="image-left">
+            <ul class="text-right">
+                <li><strong>Objetivo:</strong> Presentar la marca, modelos y servicios de Jaguar.</li>
+                <li><strong>Público:</strong> Personas interesadas en autos de lujo y tecnología avanzada.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Diapositiva de Diseño y Fundamentación -->
+    <div class="slide" id="slide4">
+        <h1>Diseño y Fundamentación</h1>
+        <ul class="list">
+            <li class="list-item">Estilo sofisticado</li>
+            <li class="list-item">Navegación intuitiva</li>
+            <li class="list-item">Resalta la marca</li>
+            <li class="list-item">Diseño elegante</li>
+        </ul>
+        <img src="images/imagen-principal.jpg" alt="Imagen de diseño" class="bottom-image">
+    </div>
+
+    <!-- Diapositiva de Wireframe para Escritorio -->
+    <div class="slide" id="slide5">
+        <h1>Wireframe para Escritorio</h1>
+        <div class="wireframe-container">
+            <img src="images/Jaguar-compu.jpg" alt="Wireframe 1">
+            <img src="images/Jaguar-compu-3.jpg" alt="Wireframe 3">
+        </div>
+    </div>
+
+    <!-- Diapositiva de Wireframe para Móvil -->
+    <div class="slide" id="slide6">
+        <h1>Wireframe para Móvil</h1>
+        <div class="wireframe-mobile-container">
+            <img src="images/Android-Large---3.jpg" alt="Wireframe Móvil 1">
+            <img src="images/Home-Page.jpg" alt="Wireframe Móvil 2">
+        </div>
+    </div>
+
+    <!-- Diapositiva de Enlace al sitio -->
+    <div class="slide" id="slide7">
+        <h1>Presentación del Sitio</h1>
+        <p>A continuación, el enlace a la versión navegable del sitio:</p>
+        <p><a href="https://bameule.github.io/autosjaguar/" target="_blank" style="color: #d4af37; font-size: 1.5rem;">Visitar sitio Jaguar</a></p>
+    </div>
+
+    <!-- Botones de navegación -->
+    <div class="nav-buttons">
+        <button class="button" id="prevButton" onclick="prevSlide()">Anterior</button>
+        <button class="button" id="nextButton" onclick="nextSlide()">Siguiente</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            document.getElementById('prevButton').disabled = (index === 0);
+            document.getElementById('nextButton').disabled = (index === slides.length - 1);
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
