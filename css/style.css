@@ -749,7 +749,7 @@ header {
 
 .imagen-distribuidorprincipal {
     background: url('../images/Jag_F-TYPE_24MY_Exterior_Detail_02_March_2023_MF101966.jpg') no-repeat center center/cover;
-    height: 400px; /* Ajusta la altura según sea necesario */
+    height: 600px; /* Ajusta la altura según sea necesario */
     position: relative;
 }
 
