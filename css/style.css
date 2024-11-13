@@ -96,7 +96,7 @@ header {
 /* Estilos para la sección de imagen principal */
 .imagen-principal {
     background: url('../images/imagen-principal.jpg') no-repeat center center/cover;
-    height: 400px;
+    height: 600px;
     position: relative;
 }
 
@@ -427,13 +427,6 @@ header {
     margin-left: 10px;
 }
 
-/* Estilos para la sección de imagen principal */
-.imagen-principal {
-    background: url('../images/imagen-principal.jpg') no-repeat center center/cover;
-    height: 400px;
-    position: relative;
-}
-
 .contenido-imagen {
     position: absolute;
     bottom: 20px;
@@ -584,13 +577,6 @@ header {
     background-color: #333;
     color: white;
     text-align: center;
-}
-
-/* Imagen Principal */
-.imagen-principal {
-    background: url('../images/imagen-principal.jpg') no-repeat center center/cover;
-    height: 400px; /* Ajusta la altura según sea necesario */
-    position: relative;
 }
 
 .contenido-imagen {

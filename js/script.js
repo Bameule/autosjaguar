@@ -4,13 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevButton = document.querySelector('.prev');
     const nextButton = document.querySelector('.next');
     
-    // Solo ejecutar si los elementos del slider existen en la página
     if (sliderWrapper && prevButton && nextButton) {
         let index = 0;
         const items = document.querySelectorAll('.cuadro');
         const totalItems = items.length;
 
-        // Verificar si hay items antes de continuar
         if (totalItems > 0) {
             const itemWidth = items[0].offsetWidth;
 
@@ -29,7 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 updateSlider();
             });
 
-            // Inicializar el slider
+            window.addEventListener('resize', function() {
+                updateSlider(); // Actualizar el slider al redimensionar la ventana
+            });
+
             updateSlider();
         }
     }
@@ -40,11 +41,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (dropdown && dropdownContent) {
         dropdown.addEventListener('click', function(event) {
-            event.stopPropagation(); // Evita que el evento se propague y cierre el menú inmediatamente
+            event.stopPropagation();
             dropdownContent.classList.toggle('show');
         });
 
-        // Cerrar el menú desplegable si el usuario hace clic fuera de él
         window.addEventListener('click', function(event) {
             if (!dropdown.contains(event.target)) {
                 dropdownContent.classList.remove('show');
@@ -58,7 +58,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (menuIcon && navegador) {
         menuIcon.addEventListener('click', function(event) {
-            event.stopPropagation(); // Evita que el clic cierre el menú inmediatamente
-            navegador.classList.toggle("active"); // Alterna la clase 'active' para mostrar el menú
+            event.stopPropagation();
+            navegador.classList.toggle("active");
+        });
+        
+        window.addEventListener('click', function(event) {
+            if (!menuIcon.contains(event.target) && !navegador.contains(event.target)) {
+                navegador.classList.remove("active");
+            }
         });
     }
+});

@@ -137,6 +137,105 @@
             border-radius: 8px;
             object-fit: cover;
         }
+		
+		.highlight-box {
+    padding: 15px 20px;
+    background-color: #2A2A2E; /* Fondo oscuro */
+    border-radius: 8px;
+    margin: 10px 0;
+    color: #A9A9A9; /* Gris claro */
+    max-width: 700px;
+    font-size: 1.5rem;
+}
+
+.text-right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    color: #EDEDED;
+}
+		
+.enhanced-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.enhanced-text-box {
+    flex: 1;
+    background-color: rgba(42, 42, 46, 0.8); /* Fondo semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+    color: #EDEDED; /* Gris claro */
+    font-size: 1.5rem;
+    line-height: 1.6;
+    text-align: left;
+    max-width: 600px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-right {
+    width: 600px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+		
+.final-slide-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.final-subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #C2C2C2; /* Gris claro */
+    font-style: italic;
+}
+
+.link-box {
+    background-color: rgba(42, 42, 46, 0.8); /* Fondo semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    color: #EDEDED; /* Gris claro */
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.visit-button {
+    display: inline-block;
+    padding: 15px 25px;
+    margin-top: 15px;
+    background-color: #00743F; /* Verde Jaguar */
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.visit-button:hover {
+    background-color: #005c2f; /* Tono más oscuro para hover */
+}
     </style>
 </head>
 <body>
@@ -149,28 +248,34 @@
         <p>Materia: PRODUCCION DIGITAL I</p>
     </div>
     
-    <!-- Diapositiva de Temática -->
-    <div class="slide" id="slide2">
-        <h1>Temática</h1>
-        <div class="content">
-            <div class="text-left">
-                <p>Jaguar es una marca británica de automóviles de lujo y alto rendimiento, conocida por su estilo elegante y sofisticado, así como por su avanzada tecnología.</p>
-            </div>
+   <!-- Diapositiva de Temática Mejorada -->
+<div class="slide" id="slide2">
+    <h1>Temática</h1>
+    <div class="content enhanced-content">
+        <div class="text-left enhanced-text-box">
+            <p><strong>Jaguar</strong> es una marca británica de automóviles de lujo y alto rendimiento, conocida por su estilo elegante y sofisticado, así como por su avanzada tecnología.</p>
+        </div>
+        <div class="image-container">
             <img src="images/jaguarnoticiaprincipal.jpg" alt="Imagen de Jaguar" class="image-right">
         </div>
     </div>
+</div>
 
-    <!-- Diapositiva de Objetivo y Público -->
-    <div class="slide" id="slide3">
-        <h1>Objetivo y Público</h1>
-        <div class="content">
-            <img src="images/Jag_F-PACE_24MY_Exterior_08_Detail_GL_001_141222.jpg" alt="Imagen relacionada" class="image-left">
-            <ul class="text-right">
-                <li><strong>Objetivo:</strong> Presentar la marca, modelos y servicios de Jaguar.</li>
-                <li><strong>Público:</strong> Personas interesadas en autos de lujo y tecnología avanzada.</li>
-            </ul>
+<!-- Diapositiva de Objetivo y Público -->
+<div class="slide" id="slide3">
+    <h1>Objetivo y Público</h1>
+    <div class="content">
+        <img src="images/Jag_F-PACE_24MY_Exterior_08_Detail_GL_001_141222.jpg" alt="Imagen relacionada" class="image-left">
+        <div class="text-right">
+            <div class="highlight-box">
+                <p><strong>Objetivo:</strong> Presentar la marca, modelos y servicios de Jaguar.</p>
+            </div>
+            <div class="highlight-box">
+                <p><strong>Público:</strong> Personas interesadas en autos de lujo y tecnología avanzada.</p>
+            </div>
         </div>
     </div>
+</div>
 
     <!-- Diapositiva de Diseño y Fundamentación -->
     <div class="slide" id="slide4">
@@ -202,12 +307,17 @@
         </div>
     </div>
 
-    <!-- Diapositiva de Enlace al sitio -->
-    <div class="slide" id="slide7">
-        <h1>Presentación del Sitio</h1>
-        <p>A continuación, el enlace a la versión navegable del sitio:</p>
-        <p><a href="https://bameule.github.io/autosjaguar/" target="_blank" style="color: #d4af37; font-size: 1.5rem;">Visitar sitio Jaguar</a></p>
+   <!-- Diapositiva de Enlace al sitio Mejorada -->
+<div class="slide" id="slide7">
+    <h1>Presentación del Sitio</h1>
+    <div class="final-slide-content">
+        <p class="final-subtitle">Explora la elegancia y tecnología de Jaguar en nuestro sitio web.</p>
+        <div class="link-box">
+            <p>Haz clic en el siguiente botón para visitar la versión navegable del sitio:</p>
+            <a href="https://bameule.github.io/autosjaguar/" target="_blank" class="visit-button">Visitar sitio Jaguar</a>
+        </div>
     </div>
+</div>
 
     <!-- Botones de navegación -->
     <div class="nav-buttons">
