@@ -496,7 +496,7 @@ header {
 /* Estilos para la sección de imagen principal */
 .imagen-noticiaprincipal {
     background: url('../images/jaguarnoticiaprincipal.jpg') no-repeat center center/cover;
-    height: 400px; /* Ajusta la altura según sea necesario */
+    height: 650px; /* Ajusta la altura según sea necesario */
     position: relative;
 }
 
@@ -518,12 +518,7 @@ header {
     color: white;
 }
 
-.imagen-noticiaprincipal {
-    background: url('../images/jaguarnoticiaprincipal.jpg') no-repeat center center;
-    background-size: cover; /* Asegura que la imagen cubra toda la sección */
-    height: 400px; /* Ajusta la altura según sea necesario */
-    position: relative;
-}
+
 
 .contenido-imagen {
     position: absolute;
